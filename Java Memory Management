@@ -1,0 +1,14 @@
+------------------------Java Memory Management------------------------
+This article will focus on Java memory management, how the heap works, reference types, garbage collection, and also related concepts.
+
+>  Why Learn Java Memory Management?
+We all know that Java itself manages the memory and needs no explicit intervention of the programmer. Garbage collector itself ensures that the unused space gets cleaned and memory can be freed when not needed. So what’s the role of programmer and why a programmer needs to learn about the Java Memory Management ? Being a programmer, you don’t need to bother with problems like destroying objects, all credits to the garbage collector. However the automatic garbage collection doesn’t guarantee everything. If we don’t know how the memory management works, often we will end up amidst things that are not managed by JVM (Java Virtual Machine). There are some objects that aren’t eligible for the automatic garbage collection.
+
+Hence knowing the memory management is essential as it will benefit the programmer to write high performance based programs that will not crash, or if does so, the programmer will know how to debug or overcome the crashes.
+
+------------------The major concepts in Java Memory Management------------------
+1. JVM Memory Structure.
+			| Heap Area | Method Area | JVM Stack | Native Method Stack | PC Register |
+			
+2. Working of Garbage Collector.
+	
