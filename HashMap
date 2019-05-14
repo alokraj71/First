@@ -1,0 +1,23 @@
+https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
+
+In this article, we will see how hashmap’s get and put method works internally. What operations are performed. How the hashing is done. How the value is fetched by key. How the key-value pair is stored.
+
+As in previous article, HashMap contains an array of Node and Node can represent a class having following objects :
+
+int hash
+K key
+V value
+Node next
+
+> Hashing is a process of converting an object into integer form by using the method hashCode(). Its necessary to write hashCode() method properly for better performance of HashMap
+> As HashMap also allows null key, so hash code of null will always be 0
+> It indicates the implementation of hashCode() is native because there is not any direct method in java to fetch the reference of object.
+> In HashMap, hashCode() is used to calculate the bucket and therefore calculate the index.
+> HashMap uses equals() to compare the key whether the are equal or not.
+
+In java equals() method is used to compare equality of two Objects. The equality can be compared in two ways:
+
+Shallow comparison:
+      > The default implementation of equals method is defined in Java.lang.Object class which simply checks if two Object references (say x and y) refer to the same Object. i.e. It checks if x == y. Since Object class has no data members that define its state, it is also known as shallow comparison.
+Deep Comparison: 
+      >Suppose a class provides its own implementation of equals() method in order to compare the Objects of that class w.r.t state of the Objects. That means data members (i.e. fields) of Objects are to be compared with one another. Such Comparison based on data members is known as deep comparison
