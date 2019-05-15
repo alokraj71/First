@@ -1,0 +1,30 @@
+Impo points of microservices:
+>This architectural pattern makes the services easy to understand because each service is isolated with its own CPU, memory, and server configuration.
+> Scaling a service can be done through increasing or decreasing the size of the VM and many IaaS hosts offer a mechanism for auto-scaling.
+
+>>Having your application in well packaged stand-alone containers is the first step in managing multiple microservices.
+>>The next is managing all of the containers, allowing them to share resources and setting configuration for scaling
+  >>This is where a container orchestration platform comes in.
+  >>When you use a container orchestration tool, you typically describe the configuration in a YAML or JSON file.
+    - This file will specify
+      -where to download the container image
+      -how networking between containers should be handled
+      -how to handle storage
+      -where to push logs
+      -And any other necessary configuration
+    -Since this configuration lives in a text file you can add it to source control to track changes and easily include it in your CI/CD pipeline
+>>Once containers are configured and deployed, the orchestration tool manages its lifecycle
+>>This includes starting and stopping a service, scaling it up or down through launching replicas and restarting containers after failure.
+>>Containers also benefit from being supported on all operating systems and most cloud platforms
+>> This allows you to move between AWS, GCP, and Azure without rewriting your code
+>>There are many orchestration tools available:
+  -Amazon's ECS
+  -Docker Swarm
+  -Apache Mesos
+  -Kubernetes (the most popular, Kubernetes was created at Google, but has since been released as open source)
+  
+>>Lambda functions are a stateless service, the code package is uploaded into AWS and executed based on a specific trigger:
+  -Directly through a CLI request.
+  -HTTP request routed through an API Gateway.
+  -Schedule (CRON Job).
+  -Cloud Event from another service like S3, Simple Email Service, DynamoDB, etc.  
